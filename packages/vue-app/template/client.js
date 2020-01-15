@@ -111,7 +111,7 @@ function mapTransitions (Components, to, from) {
 
   // If leaving a child route to a parent, keep the child leave transition
   while (from && from.matched.length > tComponents.length) { // eslint-disable-line no-unmodified-loop-condition
-    tComponents.push({})
+    tComponents.push(Object.assign({}, from.matched[0]))
   }
   return tComponents.map((Component, i) => {
     // Clone original object to prevent overrides
